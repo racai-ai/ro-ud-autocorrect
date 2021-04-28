@@ -3,7 +3,7 @@ import re
 
 _todo_rx = re.compile('ToDo=([^|_]+)')
 
-def fix_aux_pass(sentence: list, attrs: dict) -> None:
+def fix_aux_pass(sentence: list) -> None:
     """Takes a sentence as returned by conll.read_conllu_file() and makes
     sure that if an aux:pass is present the subject is also passive."""
 
@@ -36,7 +36,7 @@ def fix_aux_pass(sentence: list, attrs: dict) -> None:
         # end for
     # end if
 
-def remove_todo(sentence: list, attrs: dict) -> None:
+def remove_todo(sentence: list) -> None:
     """Takes a sentence as returned by conll.read_conllu_file() and makes
     sure that ToDo=... is removed if syntactic relation has been changed."""
 
@@ -73,7 +73,7 @@ def remove_todo(sentence: list, attrs: dict) -> None:
     # end parts
 
 
-def fix_nmod2obl(sentence: list, attrs: dict) -> None:
+def fix_nmod2obl(sentence: list) -> None:
     """Takes a sentence as returned by conll.read_conllu_file() and makes
     sure that nmod -> obl when nmod is headed by a verb."""
 

@@ -1,5 +1,9 @@
 import sys
-import fixutils
+from pathlib import Path
+from fixutils import read_conllu_file
+from fixutils.numerals import fix_numerals
+from fixutils.words import fix_letters, fix_months, fix_to_be
+from fixutils.syntax import fix_aux_pass, remove_todo, fix_nmod2obl
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
@@ -7,14 +11,27 @@ if __name__ == '__main__':
         exit(1)
     # end if
 
-    (corpus, msd2attr) = fixutils.read_conllu_file(sys.argv[1])
+    (corpus, _) = read_conllu_file(sys.argv[1])
     
     for (comments, sentence) in corpus:
-        fixutils.numerals.fix_numerals(sentence, msd2attr)
-        fixutils.words.fix_letters(sentence, msd2attr)
-        fixutils.words.fix_months(sentence, msd2attr)
-        fixutils.words.fix_to_be(sentence, msd2attr)
-        fixutils.syntax.fix_aux_pass(sentence, msd2attr)
-        fixutils.syntax.remove_todo(sentence, msd2attr)
-        fixutils.syntax.fix_nmod2obl(sentence, msd2attr)
+        fix_numerals(sentence)
+        fix_letters(sentence)
+        fix_months(sentence)
+        fix_to_be(sentence)
+        fix_aux_pass(sentence)
+        remove_todo(sentence)
+        fix_nmod2obl(sentence)
     # end all sentences
+
+    output_file = Path(sys.argv[1])
+    output_file = Path(output_file.parent) / Path(output_file.name + ".fixed")
+
+    with open(output_file, mode='w', encoding='utf-8') as f:
+        for (comments, sentence) in corpus:
+            f.write('\n'.join(comments))
+            f.write('\n')
+            f.write('\n'.join(['\t'.join(x) for x in sentence]))
+            f.write('\n')
+            f.write('\n')
+        # end for
+    # end with

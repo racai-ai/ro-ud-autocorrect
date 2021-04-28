@@ -1,6 +1,6 @@
 import sys
 import re
-from . import _fix_str_const, _fix_str_const2
+from . import fix_str_const, fix_str_const2, morphosyntactic_features
 
 _num_rx = re.compile('^[0-9]+([.,][0-9]+)?$')
 _int_rx = re.compile('^[0-9]+([.,][0-9]+)?(-|﹘|‐|‒|–|—)[0-9]+([.,][0-9]+)?$')
@@ -33,7 +33,7 @@ _bullet_rx = re.compile('^[0-9]+[a-zA-Z0-9.]+$')
 _telephone_rx = re.compile('^0[0-9]+([.-]?[0-9])+$')
 
 
-def fix_numerals(sentence: list, attrs: dict) -> None:
+def fix_numerals(sentence: list) -> None:
     """Takes a list of CoNLL-U sentences are produced by conllu.read_conllu_file() and applies
     the numeral rules."""
 
@@ -71,12 +71,12 @@ def fix_numerals(sentence: list, attrs: dict) -> None:
         if performed:
             parts[2] = word
 
-            if parts[4] in attrs:
-                parts[5] = attrs[parts[4]]
+            if parts[4] in morphosyntactic_features:
+                parts[5] = morphosyntactic_features[parts[4]]
             else:
-                print(_fix_str_const2.format(
+                print(fix_str_const2.format(
                     fix_numerals.__name__, msd), file=sys.stderr, flush=True)
 
-            print(_fix_str_const.format(
+            print(fix_str_const.format(
                 fix_numerals.__name__, word, msd, parts[4]), file=sys.stderr, flush=True)
     # end for
