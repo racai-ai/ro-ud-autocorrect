@@ -64,8 +64,6 @@ fix_to_be: este/Vmip3s -> Vaip3s
 fix_numerals: 570/Mc-p-d -> Mc-s-d
 fix_numerals: 128/Mc-p-d -> Mc-s-d
 fix_numerals: 7,28/Mc-p-d -> Mc-s-d
-fix_letters: m/Yn -> Ncms-n
-fix_letters: m/Yn -> Ncms-n
 fix_to_be: este/Vmip3s -> Vaip3s
 remove_todo: SpaceAfter=No|ToDo=nmod -> SpaceAfter=No
 fix_numerals: 500/Mc-p-d -> Mc-s-d
@@ -505,4 +503,3 @@ fix_letters: W/Ncm--n -> Ncms-n
 fix_letters: V/Ncm--n -> Ncms-n
 fix_numerals: 122/Mc-p-d -> Mc-s-d
 fix_numerals: 5800/Mc-p-d -> Mc-s-d
-fix_letters: K/Yn -> Ncms-n

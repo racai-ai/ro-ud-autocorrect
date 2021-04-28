@@ -252,12 +252,9 @@ fix_to_be: este/Vmip3s -> Vaip3s
 fix_numerals: 12/Mc-p-d -> Mc-s-d
 fix_numerals: 7/Mc-p-d -> Mc-s-d
 fix_numerals: 5/Mc-p-d -> Mc-s-d
-fix_letters: g/Yn -> Ncms-n
-fix_letters: l/Yn -> Ncms-n
 fix_to_be: Este/Vmip3s -> Vaip3s
 fix_numerals: 193/Mc-p-d -> Mc-s-d
 fix_numerals: 300/Mc-p-d -> Mc-s-d
-fix_letters: m/Yn -> Ncms-n
 fix_numerals: 80/Mc-p-d -> Mc-s-d
 fix_to_be: fost/Vmp--sm -> Vap--sm
 fix_letters: X/Ncm--n -> Ncms-n
@@ -407,7 +404,6 @@ fix_numerals: 2/Mc-p-d -> Mc-s-d
 fix_numerals: 9/Mc-p-d -> Mc-s-d
 fix_numerals: 2/Mc-p-d -> Mc-s-d
 fix_numerals: 37/Mc-p-d -> Mc-s-d
-fix_letters: C/Yn -> Ncms-n
 fix_numerals: 32/Mc-p-d -> Mc-s-d
 fix_numerals: 1/Mc-p-d -> Mc-s-d
 fix_to_be: E/Vmip3s -> Vaip3s
@@ -485,8 +481,6 @@ fix_numerals: 1989/Mc-p-d -> Mc-s-d
 fix_numerals: 7/Mc-p-d -> Mc-s-d
 fix_numerals: 40/Mc-p-d -> Mc-s-d
 fix_numerals: 400/Mc-p-d -> Mc-s-d
-fix_letters: m/Yn -> Ncms-n
-fix_letters: m/Yn -> Ncms-n
 fix_to_be: este/Vmip3s -> Vaip3s
 remove_todo: ToDo=nmod -> _
 remove_todo: ToDo=nmod -> _
@@ -499,7 +493,6 @@ fix_numerals: 1900/Mc-p-d -> Mc-s-d
 fix_letters: E/Ncm--n -> Ncms-n
 fix_numerals: 2000/Mc-p-d -> Mc-s-d
 fix_letters: T/Ncm--n -> Ncms-n
-fix_letters: K/Yn -> Ncms-n
 fix_numerals: 1916/Mc-p-d -> Mc-s-d
 fix_to_be: este/Vmip3s -> Vaip3s
 fix_letters: W/Ncm--n -> Ncms-n

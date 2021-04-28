@@ -11,14 +11,15 @@ def fix_letters(sentence: list) -> None:
 
     for parts in sentence:
         word = parts[1]
+        lemma = parts[2]
         msd = parts[4]
 
         if parts[3] != 'NOUN':
             continue
 
-        if _letter_rx.match(word) and msd != 'Ncms-n':
+        if _letter_rx.match(word) and msd != 'Ncms-n' and lemma == word:
+            # Do not change K -> Kelvin instances which are Yn!
             parts[4] = 'Ncms-n'
-            parts[2] = word
 
             if parts[4] in morphosyntactic_features:
                 parts[5] = morphosyntactic_features[parts[4]]
