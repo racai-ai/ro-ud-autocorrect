@@ -82,7 +82,7 @@ def add_space_after_no(sentence: list, comments: list) -> None:
             parts[9] = _get_updated_misc(misc)
 
         if word.startswith('-') and \
-            (upos == 'AUX' or upos == 'DET' or upos == 'ADP' or upos == 'PART') and prev_parts:
+            (upos == 'AUX' or upos == 'DET' or upos == 'ADP' or upos == 'PART' or upos == 'PRON') and prev_parts:
             prev_parts[9] = _get_updated_misc(prev_misc)
 
         # 3.1 Deal with noun compunds with '-'
