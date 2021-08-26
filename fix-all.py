@@ -11,7 +11,7 @@ if __name__ == '__main__':
     conllu_file = sys.argv[1]
 
     if len(sys.argv) < 2 or len(sys.argv) > 3:
-        print("Usage: python3 fixall.py [-s] <.conllu file>", file=sys.stderr)
+        print("Usage: python3 fix-all.py [-s] <.conllu file>", file=sys.stderr)
         exit(1)
     elif sys.argv[1] == '-s':
         remove_spaces = True
